@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="./css/style.css"  rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div class="margin20 textCenter fs20">Meeting Scheduler</div>
+    <div class="textCenter">
+      <div class="textCenter inputContent">
+        <div class="txtLeft marginTB40 fb">
+          <label class="" for="buildingName">Block Name: </label>
+          <select id="buildingName">
+            <option value="Block A"  selected="selected">Block A</option>
+            <option value="Block B">Block B</option>
+            <option value="Block C">Block C</option>
+          </select>
+          <label class="padL10" for="floorNumber">Floor No:</label>
+          <select id="floorNumber">
+            <option value="Floor 1"  selected="selected">Floor 1</option>
+            <option value="Floor 2">Floor 2</option>
+            <option value="Floor 3">Floor 3</option>
+          </select>
+          <label class="padL10" for="meetingRoomName">Meeting Room No:</label>
+          <select id="meetingRoomName">
+            <option value="Meeting Room 1" selected="selected">Room 1</option>
+            <option value="Meeting Room 2">Room 2</option>
+            <option value="Meeting Room 3">Room 3</option>
+          </select>
+        </div>
+        <div class="txtLeft">
+          <div class="marginTB40 fb">Meeting Start at :
+            <input type="date" id="startDate" value="2019-07-21"/>
+            <input type="time" id="startTime" value="00:00"/>
+          </div>
+          <div class="marginTB40 fb">Meeting Ends at :
+            <input type="date" id="endDate" value="2019-07-21"/>
+            <input type="time" id="endTime" value="00:00"/>
+          </div>
+        </div>
+        <div id="error" class="dn error padB10">Invalid Input!</div>
+        <button type="button" class="marginB20 btn" id="scheduleBtn">Schedule Meeting</button>
+      </div>
+      <div id="tabs" class="tabs marginT20">
+        <span class="padL10 d-inbl tab cursorPtr activeTab" id="allMeetingsTab">All Meetings</span>
+        <span class="padL10 d-inbl tab cursorPtr" id="todayTab">Today's Meetings</span>
+        <div id="meetingSummary" class="meetingSummary">
+          <ul class="card d-inbl">
+            <li>
+              <div class="fb">Block A - Floor 1 - Meeting Room 1</div>
+              <div class="padT10">
+                <span class="fb">Starts at:</span>
+                <span>Sun Jul 21 2019,</span>
+                <span>10:00</span>
+              </div>
+              <div class="padT10">
+                <span class="fb">Ends at:</span>
+                <span>Sun Jul 21 2019,</span>
+                <span>11:00</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <script>
+    window.meetingsList = [
+    {
+      startDate: "2019-07-21",
+      startTime: "10:00",
+      endDate: "2019-07-21",
+      endTime: "11:00",
+      endMicro: 1563647400000,
+      buildingName: "Block A",
+      floorNumber: "Floor 1",
+      meetingRoomName: "Meeting Room 1"
+    }
+    ];
+  </script>
+  <script src="./js/script.js" type="text/javascript"></script>
+</html>
